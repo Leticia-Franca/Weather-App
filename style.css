@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+
+*, *::after, *::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+}
+
+.wrapp-app {
+	/* eu tentei "centralizar, mas nao dá pra fazer isso
+	porque esse elemento é uma div, e ela ocupa toda a 
+	extensão da width do parent (no caos, o body), entao
+	nao faz sentido assim */
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background-image: url('./images/clouded-sky.jpg');
+	background-size: cover;
+	background-position: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	background-blend-mode: multiply;
+	align-items: center;
+	padding-top: 5rem;
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	margin-bottom: 2rem;
+}
+
+header::before {
+	content: '';
+	width: 25%;
+	height: 8px;
+	background-color: rgba(228, 204, 23, 0.7);
+	border-radius: 900px;
+	margin-bottom: .25rem;
+}
+
+header input {
+	width: 50%;
+	height: 2rem;
+	border-radius: 900px;
+	padding: 1.5rem 2.5rem;
+	border: none;
+	outline: none;
+	font-size: 1.1rem;
+	color: rgba(52, 48, 65, 0.8);
+}
+
+header input:focus {
+	background: rgba(255, 255, 255, 0.7);
+}
+
+main {
+	background-color: rgba(127, 122, 146, 0.8);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;;
+	padding: 3.5rem;
+	border-radius: 1rem 5.5rem;
+	box-shadow: -10px 12px 10px rgba(0, 0, 0, 0.6), 10px 16px 10px rgba(0, 0, 0, 0.6);
+}
+
+.temp-value {
+	color: rgb(255, 255, 255);
+	font-size: 6rem;
+	font-weight: 900;
+	text-shadow: 4px 10px 5px rgba(34, 32, 32, 0.4);
+}
+
+.temp-value span {
+	font-weight: 200;
+	font-size: 4.5rem;
+	margin-left: .5rem;
+}
+
+.detail-container {
+	font-size: 1.2rem;
+	color: rgba(255, 255, 255, 0.6);
+	margin-top: 0rem;
+}
+
+.min-max {
+	font-weight: 400;
+	font-style: italic;
+}
+
+.date, .city {
+	color: white;
+	font-size: 1.2rem;
+	font-weight: regular;
+	font-style: italic;
+}
+
+/* Responsive screen - vertical */
+@media (max-width: 620px) {
+	header input {
+		width: 20rem;
+	}
+}
+
+@media (max-width: 380px) {
+	.date, .min-max {
+		display: none;
+	}
+
+	main {
+		padding: 3.5rem 10vw;
+		margin: 0 10vw;
+	}
+
+	header input {
+		width: 70vw;
+		padding: 1.5rem;
+	}
+}
+
+/* Horizontal screen */
+@media (max-height: 450px) {
+	main {
+		flex-direction: row;
+		width: 75vw;
+		height: 50vh;
+		justify-content: space-around;
+		align-items: center;
+		padding: 1rem;
+	}
+
+	.location-temperature .date {
+		display: none;
+	}
+
+	.location-temperature .city {
+		margin-top: 2rem;
+	}
+
+
+}
