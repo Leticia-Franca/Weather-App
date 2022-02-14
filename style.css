@@ -13,7 +13,7 @@ body {
 .wrapp-app {
 	/* eu tentei "centralizar, mas nao dá pra fazer isso
 	porque esse elemento é uma div, e ela ocupa toda a 
-	extensão da width do parent (no caos, o body), entao
+	extensão da width do parent (body), entao
 	nao faz sentido assim */
 	display: flex;
 	flex-direction: column;
